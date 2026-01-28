@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory App</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2196f3">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Inventory Master</h1>
+  <h2>Daily Sales: ksh<span id="sales">0</span></h2>
+  <button onclick="resetSales()">Reset Sales</button>
+  <button onclick="downloadPDF()">Download Low Stock PDF</button>
+
+  <!-- Add New Item Form -->
+  <h3>Add New Item</h3>
+  <form id="addItemForm" onsubmit="addNewItem(event)">
+    <input type="text" id="newName" placeholder="Item Name" required>
+    <input type="number" id="newPrice" placeholder="Price" required>
+    <input type="number" id="newStock" placeholder="Initial Stock" required>
+    <button type="submit">Add Item</button>
+  </form>
+
+  <ul id="itemList"></ul>
+
+  <canvas id="chart"></canvas>
+  <h3>Highest Selling Product: <span id="topProduct">None</span></h3>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+<footer class="footer">
+  <p>&copy; 2026 Cryptolimo. All rights reserved.</p>
+</footer>
+
+</html>
